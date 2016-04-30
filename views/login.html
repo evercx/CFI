@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CFI</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/loginPage.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.idcode.css">
+</head>
+
+<body background="./img/debut_light.png">
+    <div class="wrap">
+        <div class="header">WELCOME</div>
+        <div class="subheader">The Prediction System Of CFI</div>
+        <div class="row">
+            <div id="titleSignUp" class="col-md-6" style="padding-left: 70px; cursor: pointer; float: left;">SignUp</div>
+            <div id="titleSignIn" class="col-md-6" style="padding-right: 70px;cursor: pointer; float: right;">SignIn</div>
+        </div>
+        <div id="underline"></div>
+        <div class="clsSignUp">
+            <div class="input-group">
+                <input type="text" class="form-control" id="suEmail" placeholder="E-mail address" aria-describedby="basic-addon1">
+                <input type="password" class="form-control" id="suPwd" placeholder="password" aria-describedby="basic-addon1">
+                <input type="password" class="form-control" id="suPwdCfm" placeholder="password again" aria-describedby="basic-addon1">
+                <span id="idcode"></span>
+<!--                 <input type="text" class="form-control"  id="suVcode" placeholder="verification code" aria-describedby="basic-addon1"> -->
+                
+            </div>
+        </div>
+        <div class="clsSignIn">
+            <div class="input-group">
+                <input type="text" class="form-control" id="siEmail" placeholder="E-mail address" aria-describedby="basic-addon1">
+                <input type="password" class="form-control" id="siPwd" placeholder="password" aria-describedby="basic-addon1">
+  <!--               <input type="text" class="form-control" id="siVcode" placeholder="verification code" aria-describedby="basic-addon1">
+                <span id="idcode"></span> -->
+                <!-- <span id="idcodeUp"></span> -->
+            </div>
+        </div>
+        <button id="btnSignUp" type="button" class="btn btn-info btn-lg">SignUp</button>
+        <button id="btnSignIn" type="button" class="btn btn-info btn-lg">SignIn</button>
+    </div>
+    <script type="text/javascript" src="js/jquery1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/center.js"></script>
+    <script type="text/javascript" src="js/loginPage.js"></script>
+    <script type="text/javascript" src="js/idcode.js"></script>
+<!--     <script type="text/javascript" src="js/idcodeup.js"></script> -->
+</body>
+</html>

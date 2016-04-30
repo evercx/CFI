@@ -1,0 +1,83 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+/*html,body {
+    background-color: #404144;
+}*/
+
+.wrap {
+    width: 300px;
+    height: 550px;
+    margin: auto;
+    padding: 45px 0;
+    background: whitesmoke;
+    vertical-align: middle;
+    position: absolute;
+}
+
+.header,
+.subheader {
+    width: 100%;
+    font-family: 'Microsoft YaHei';
+    font-weight: 500;
+    font-size: 50px;
+    color: #0F88EB;
+    text-align: center;
+}
+
+.subheader {
+    font-weight: 200;
+    font-size: 15px;
+    color: #404144;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    padding: 10px;
+}
+
+.form-control {
+    border-radius: 0px !important;
+    height: 50px;
+    border: 1px solid #eaeaea;
+}
+
+.row {
+    text-align: center;
+    color: #777;
+    font-weight: 700;
+    font-size: 20px;
+    font-family: 'Microsoft YaHei';
+    margin-bottom: 5px;
+}
+
+#underline {
+    width: 70px;
+    height: 2px;
+    background: #0F88EB;
+    position: relative;
+    bottom: 0px;
+    margin-bottom: 15px;
+    left: 170px;
+}
+
+.btn {
+    border-radius: 0px;
+    width: 93%;
+    margin: 5px 10px 0px 10px;
+}
+
+.sp1 {
+    color: #0F88EB;
+}
+
+.sp2 {
+    color: #0F88EB;
+}
+
+.myclass {
+    background: #0F88EB;
+    width: 100px;
+}
