@@ -191,6 +191,7 @@ $("#btnSignIn").click(function(){
         data:JSON.stringify(postData),
         success:function(data){
             if(data.err){
+                alert(data.err);
                 console.log(data.err);
             }else{
                 window.location.reload();

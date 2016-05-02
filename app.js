@@ -51,10 +51,7 @@ app.use(function(req,res,next){
   res.setHeader('Access-Control-Allow-Origin','*');
   res.setHeader("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,DELETE');
-  //res.setHeader('Cache-Control:no-cache');
   next();
-  //console.log("use");
-
 });
 restify.serve(router,userInfoModel);
 
@@ -66,41 +63,7 @@ api(app);
 app.use('/users', users);
 app.use(router);
 
-// app.get('/', function(req, res, next) {
-//   //res.sendFile( __dirname+'/views/home.html');
-//   //res.render('home');
-//   if (req.session.uEmail) {
-//     res.sendFile( __dirname+'/views/home.html');
-//         //next();
-//   } else {
-//         res.redirect('/login');
-//         return;
-//     }
-//   //res.render('home');
 
-// });
-
-// app.get('/home', function(req, res, next) {
-//   res.sendFile( __dirname+'/views/home.html');
-//   //res.render('home');
-//   console.log("/home");
-// });
-
-
-
-// app.get('/login', function(req, res, next) {
-//   //res.sendFile( __dirname+'/views/login.html');
-//     if (req.session.uEmail) {
-//     res.redirect('/');
-//     }else{
-//       //res.render('login');
-//       res.sendFile( __dirname+'/views/login.html');
-//     }
-// });
-
-// app.get('/logout',function(req,res){
-//     res.redirect('/');
-// })
 
 app.post('/login',function(req,res){
   userInfoModel.findOne({"uEmail":req.body.uEmail},function(err,user){
@@ -140,8 +103,6 @@ app.post('/register',function(req,res){
         }else{
           res.json({"success":" register success."});
           res.end();
-          //return;
-          //res.redirect('/');
           }
       });
     }
