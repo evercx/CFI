@@ -58,7 +58,7 @@ restify.serve(router,userInfoModel);
 
 //路由
 app.use('/', routes);
-app.use('/testagent',testagent);
+//app.use('/testagent',testagent);
 api(app);
 app.use('/users', users);
 app.use(router);
