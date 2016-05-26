@@ -64,14 +64,15 @@ app.use('/users', users);
 app.use(router);
 
 
-
 app.post('/login',function(req,res){
+  console.log(req.body);
   userInfoModel.findOne({"uEmail":req.body.uEmail},function(err,user){
     if(user){
       if(err){return;}
       if(user.uPassword === req.body.uPassword){
         console.log("身份正确");
         req.session.uEmail = user.uEmail;
+        //res.setHeader('Set-Cookie', "ever=cx");
         console.log("session: "+req.session.uEmail);
         res.redirect('/');
       }else{

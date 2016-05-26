@@ -31,35 +31,6 @@ $(function() {
 
     $titleSignIn.addClass("sp1");
 
-    // $titleSignUp.click(function() {
-    //     $titleSignIn.removeClass("sp1");
-    //     $titleSignUp.addClass("sp1");
-
-    //     $clsSignUp.show();
-    //     $btnSignUp.show();
-    //     $clsSignIn.hide();
-    //     $btnSignIn.hide();
-
-    //     underline.animate({
-    //         "left": "60px"
-    //     }, 250);
-
-    // });
-
-    // $titleSignIn.click(function() {
-    //     $titleSignUp.removeClass("sp1");
-    //     $titleSignIn.addClass("sp1");
-
-    //     $clsSignUp.hide();
-    //     $btnSignUp.hide();
-    //     $clsSignIn.show();
-    //     $btnSignIn.show();
-
-    //     underline.animate({
-    //         "left": "170px"
-    //     }, 250);
-
-    // });
 });
 
  
@@ -96,11 +67,11 @@ $("#titleSignIn").click(function() {
 
 //注册按钮提交事件
 $("#btnSignUp").click(function(){
-    console.log("up: "+$.idcode.validateCode());
     var suEmail = $("#suEmail").val();
     var suPwd = $("#suPwd").val();
     var suPwdCfm = $("#suPwdCfm").val();
     var reEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
     if(suEmail === ''){
         alert('Please type your e-mail address.');
         return;
@@ -125,6 +96,7 @@ $("#btnSignUp").click(function(){
         alert('Verification code error');
         return;
     }
+
     var postData = {
         uEmail:suEmail,
         uPassword:suPwd
@@ -164,6 +136,8 @@ $("#btnSignIn").click(function(){
     var siEmail = $("#siEmail").val();
     var siPwd = $("#siPwd").val();
     var reEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    siEmail = "evercx@evercx.me";
+    siPwd = "306534137";
     if(siEmail === ''){
         alert('Please type your e-mail address.');
         return;

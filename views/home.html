@@ -9,13 +9,38 @@
 </head>
 
 <body background="img/bg.png">
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">The Prediction System of Container Freight Indices</a>
+    </div>
+      <ul class="nav navbar-nav navbar-right">
+        <!-- <li><a href="#">Link</a></li> -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#" id="myAccount">show account here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#"  id="logout">logout</a></li>
+          </ul>
+        </li>
+      </ul>
+  </div><!-- /.container-fluid -->
+
+</nav>
 		</br></br>
+
 		<center>
 			<h2 ><font color="white">The Prediction System of Container Freight Indices</font></h2>
 			<h3 ><font color="white" id="wel">Welcome:</font></h3>
 			</br>
 		</center>
-		<center>
+
+
+<!-- 		<center>
 		</br>
 		</br>
 		</br>
@@ -26,14 +51,55 @@
 		<input type="date" class="form-control" id="startTime" style="width:40%"></br></br>
 		<input class="btn btn-primary" type="button" value="Submit" id="submit"></input>
 		<input class="btn btn-primary" type="button" value="logout" id="logout"></input>
-		<!-- <input type="text" class="form-control" style="width:30%" id="output" placeholder="输出"></input> -->
 
-		</center>
+		</center> -->
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 left-part">
+			<form style="color: white">
+			  <div class="form-group">
+			    <label >Information 1</label>
+			    <input type="input" class="form-control" id="input1" placeholder="type something">
+			  </div>
+			  <div class="form-group">
+			    <label >Information 2</label>
+			    <input type="input" class="form-control" id="input2" placeholder="type something">
+			  </div>
+			  <div class="form-group">
+			    <label >Information 3</label>
+			    <input type="input" class="form-control" id="input3" placeholder="type something">
+			  </div>
+			  <div class="form-group">
+			    <label >Information 4</label>
+			    <input type="input" class="form-control" id="input4" placeholder="type something">
+			  </div>
+			  <div class="form-group">
+			    <label >Start Date</label>
+			    <input type="date" class="form-control" id="startDate" >
+			  </div>
+			  <div class="form-group">
+			    <label >Expiration Date</label>
+			    <input type="date" class="form-control" id="expirationDate" >
+			  </div>
+<!-- 			  <div class="checkbox">
+			    <label>
+			      <input type="checkbox"> Check me out
+			    </label>
+			  </div> -->
+			  <center><button type="submit" class="btn btn-default">Submit</button></center>
+			</form>
+		</div>
 
+  		<div class="col-md-8 right-part">
+  			<canvas id="myChart" width="400" height="400"></canvas>
+  		</div>
+	</div>
+</div>
  
 
 	<script type="text/javascript" src="js/jquery1.9.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/Chart.min.js"></script>
 	<script type="text/javascript" src="js/home.js"></script>
 </body>
 </html>
