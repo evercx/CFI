@@ -11,6 +11,7 @@ var restify = require('express-restify-mongoose');
 var hbs = require('hbs');
 var session = require('express-session');
 var cookieParser = require('cookie-parser');//引用cookie
+var fs = require('fs');
 
 var routes = require('./routes/routes');
 var users = require('./routes/users');
@@ -18,9 +19,14 @@ var api = require('./routes/api');
 var testagent = require('./routes/testagent');
 var config = require('./config');
 var userInfoModel = require('./models/userInfo');
+var absenteeismModel = require('./models/absenteeism');
+var ak = require('./controllers/accesskey');
+
 
 var app = express();
 var router = express.Router();
+
+var accessKey = '';
 
 // view engine setup
 app.set('views', path.join(__dirname, './views'));
@@ -42,8 +48,7 @@ app.use(session({
   cookie:{ path: '/', httpOnly: true, secure: false, maxAge: 43200000 }//maxAge为session的有效时间 这里设置为10个小时
 }));
 
-
-mongoose.connect(config.db.host);
+mongoose.connect(config.mongodb);
 
 
 //设置中间件，运行Html上Javascript脚本进行跨域访问
@@ -53,7 +58,9 @@ app.use(function(req,res,next){
   res.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,DELETE');
   next();
 });
-restify.serve(router,userInfoModel);
+
+console.log(restify.serve(router,userInfoModel));
+console.log(restify.serve(router,absenteeismModel));
 
 
 //路由
@@ -63,10 +70,19 @@ api(app);
 app.use('/users', users);
 app.use(router);
 
+ak(accessKey);
+var key = fs.readFileSync('key','utf-8');
+console.log("key:"+key);
 
 app.post('/login',function(req,res){
-  console.log(req.body);
+   
+  // console.log("身份正确");
+  // req.session.uEmail = user.uEmail;
+  // //res.setHeader('Set-Cookie', "ever=cx");
+  // console.log("session: "+req.session.uEmail);
+  // res.redirect('/');
   userInfoModel.findOne({"uEmail":req.body.uEmail},function(err,user){
+    console.log(req.body);
     if(user){
       if(err){return;}
       if(user.uPassword === req.body.uPassword){
@@ -110,6 +126,12 @@ app.post('/register',function(req,res){
   });
 });
 
+
+// app.get('/posturl',function(req,res){});
+
+// app.post('/posturl',function(req,res){
+//   console.log(req.body);
+// });
 
 
 
