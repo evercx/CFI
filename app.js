@@ -70,9 +70,9 @@ api(app);
 app.use('/users', users);
 app.use(router);
 
-ak(accessKey);
-var key = fs.readFileSync('key','utf-8');
-console.log("key:"+key);
+// ak(accessKey);
+// var key = fs.readFileSync('key','utf-8');
+// console.log("key:"+key);
 
 app.post('/login',function(req,res){
    
