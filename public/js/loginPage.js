@@ -134,8 +134,8 @@ $("#btnSignIn").click(function(){
     var siPwd = $("#siPwd").val();
     var reEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-    siEmail = "evercx@evercx.me";
-    siPwd = "306534137";
+    // siEmail = "evercx@evercx.me";
+    // siPwd = "306534137";
 
     if(siEmail === ''){
         alert('Please type your e-mail address.');
