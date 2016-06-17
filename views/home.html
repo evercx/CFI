@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>demo</title>
+	<title>The Prediction System of Container Freight Indices</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
 	<link rel="stylesheet" type="text/css" href="css/home.css">
 
@@ -40,66 +40,152 @@
 		</center>
 
 
-<!-- 		<center>
-		</br>
-		</br>
-		</br>
-		</br>
-		    <select name="list"  class = "form-control" style="width:40%"> 
-		        <option   value= "title" style="font-weight:bold">Please Choose a line of Container</option>
-		    </select></br></br>
-		<input type="date" class="form-control" id="startTime" style="width:40%"></br></br>
-		<input class="btn btn-primary" type="button" value="Submit" id="submit"></input>
-		<input class="btn btn-primary" type="button" value="logout" id="logout"></input>
-
-		</center> -->
 <div class="container">
 	<div class="row">
-		<div class="col-md-4 left-part">
+		<div class="col-md-6 left-part">
 			<form style="color: white">
+
+				<label style="font-size:large">Please choose your options:</label>
+				<div class="form-group">
+				  <div class="checkbox">
+				    <label>
+				      <input type="checkbox" id='icc'>Idle Containership Capacity
+				    </label>
+				   </div>
+				   <div class="checkbox">
+				    <label>
+				      <input type="checkbox" id='cc'>Containership Contracting
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label>
+				      <input type="checkbox" id='csce'>China Seaborne Containerisable Exports
+				    </label>
+				  </div>
+				  <div class="checkbox">
+				    <label>
+				      <input type="checkbox" id='tcd'>Total Containership Demolition
+				    </label>
+				  </div>
+				</div>
+
+			  <label style="font-size:large">Start Date:</label>
 			  <div class="form-group">
-			    <label >Information 1</label>
-			    <input type="input" class="form-control" id="input1" placeholder="type something">
+				  <div class="col-md-6">
+					<select class="form-control" id="sYear">
+					  <option>2010</option>
+					  <option>2011</option>
+					  <option>2012</option>
+					  <option>2013</option>
+					  <option>2014</option>
+					  <option>2015</option>
+					  <option>2016</option>
+					</select>
+				   </div>
+				  <div class="col-md-6">
+					<select class="form-control" id="sMonth">
+					  <option>01</option>
+					  <option>02</option>
+					  <option>03</option>
+					  <option>04</option>
+					  <option>05</option>
+					  <option>06</option>
+					  <option>07</option>
+					  <option>08</option>
+					  <option>09</option>
+					  <option>10</option>
+					  <option>11</option>
+					  <option>12</option>
+					</select>
+				   </div>
 			  </div>
+
+			  <label style="font-size:large">Expiration Date:</label>
 			  <div class="form-group">
-			    <label >Information 2</label>
-			    <input type="input" class="form-control" id="input2" placeholder="type something">
-			  </div>
-			  <div class="form-group">
-			    <label >Information 3</label>
-			    <input type="input" class="form-control" id="input3" placeholder="type something">
-			  </div>
-			  <div class="form-group">
-			    <label >Information 4</label>
-			    <input type="input" class="form-control" id="input4" placeholder="type something">
-			  </div>
-			  <div class="form-group">
-			    <label >Start Date</label>
-			    <input type="date" class="form-control" id="startDate" >
-			  </div>
-			  <div class="form-group">
-			    <label >Expiration Date</label>
-			    <input type="date" class="form-control" id="expirationDate" >
-			  </div>
-<!-- 			  <div class="checkbox">
-			    <label>
-			      <input type="checkbox"> Check me out
-			    </label>
-			  </div> -->
-			  <center><button type="submit" class="btn btn-default">Submit</button></center>
+				  <div class="col-md-6">
+					<select class="form-control" id="eYear">
+					  <option>2010</option>
+					  <option>2011</option>
+					  <option>2012</option>
+					  <option>2013</option>
+					  <option>2014</option>
+					  <option>2015</option>
+					  <option>2016</option>
+					</select>
+				   </div>
+				  <div class="col-md-6">
+					<select class="form-control" id="eMonth">
+					  <option>01</option>
+					  <option>02</option>
+					  <option>03</option>
+					  <option>04</option>
+					  <option>05</option>
+					  <option>06</option>
+					  <option>07</option>
+					  <option>08</option>
+					  <option>09</option>
+					  <option>10</option>
+					  <option>11</option>
+					  <option>12</option>
+					</select>
+				   </div>
+			  </div></br></br>
+			  <center><button type="button" id="submit" class="btn btn-primary">Submit</button></center>
 			</form>
+
 		</div>
 
-  		<div class="col-md-8 right-part">
-  			<canvas id="myChart" width="400" height="400"></canvas>
+  		<div class="col-md-6 chart-part" id="chartdiv0" >
+  			<canvas id="myChart0" class="myChart"></canvas>
   		</div>
 	</div>
+</div></br></br>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 chart-part" id="chartdiv1" >
+			<canvas id="myChart1" class="myChart"></canvas>
+		</div>
+		<div class="col-md-6 chart-part" id="chartdiv2" >
+			<canvas id="myChart2" class="myChart"></canvas>
+		</div>
+	</div>
+</div></br></br>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 chart-part" id="chartdiv3" >
+			<canvas id="myChart3" class="myChart"></canvas>
+		</div>
+		<div class="col-md-6 chart-part" id="chartdiv4" >
+			<canvas id="myChart4" class="myChart"></canvas>
+		</div>
+	</div>
+</div></br></br>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <canvas id="detailChart0" class="detailChart"></canvas>
+        <canvas id="detailChart1" class="detailChart"></canvas>
+        <canvas id="detailChart2" class="detailChart"></canvas>
+        <canvas id="detailChart3" class="detailChart"></canvas>
+        <canvas id="detailChart4" class="detailChart"></canvas>
+      </div>
+
+    </div>
+  </div>
 </div>
- 
 
 	<script type="text/javascript" src="js/jquery1.9.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/Chart.min.js"></script>
+	<script type="text/javascript" src="js/chartSetting.js"></script>
 	<script type="text/javascript" src="js/home.js"></script>
 </body>
 </html>

@@ -16,7 +16,7 @@ var fs = require('fs');
 var routes = require('./routes/routes');
 var users = require('./routes/users');
 var api = require('./routes/api');
-var testagent = require('./routes/testagent');
+var agent = require('./routes/testagent');
 var config = require('./config');
 var userInfoModel = require('./models/userInfo');
 var absenteeismModel = require('./models/absenteeism');
@@ -59,13 +59,13 @@ app.use(function(req,res,next){
   next();
 });
 
-console.log(restify.serve(router,userInfoModel));
-console.log(restify.serve(router,absenteeismModel));
+restify.serve(router,userInfoModel);
+restify.serve(router,absenteeismModel);
 
 
 //路由
 app.use('/', routes);
-//app.use('/testagent',testagent);
+app.use('/dateOfCFI',agent);
 api(app);
 app.use('/users', users);
 app.use(router);

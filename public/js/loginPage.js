@@ -99,11 +99,8 @@ $("#btnSignUp").click(function(){
 
     var postData = {
         uEmail:suEmail,
-        uPassword:suPwd
+        uPassword:$.base64.encode(suPwd)
     };
-
-    // postData.uEmail = "evercx@evercx.mem";
-    // postData.uPassword = "306534137";
 
     var c=confirm("Are you sure to submit?");
     if (c==true){
@@ -121,7 +118,7 @@ $("#btnSignUp").click(function(){
                 }else{
                     alert(data.success);
                     $("#siEmail").val(postData.uEmail);
-                    $("#siPwd").val(postData.uPassword);
+                    $("#siPwd").val(suPwd);
                     $("#titleSignIn").click();
                     //window.location.reload();
                 }
@@ -136,8 +133,10 @@ $("#btnSignIn").click(function(){
     var siEmail = $("#siEmail").val();
     var siPwd = $("#siPwd").val();
     var reEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    // siEmail = "evercx@evercx.me";
-    // siPwd = "306534137";
+
+    siEmail = "evercx@evercx.me";
+    siPwd = "306534137";
+
     if(siEmail === ''){
         alert('Please type your e-mail address.');
         return;
@@ -151,9 +150,10 @@ $("#btnSignIn").click(function(){
         return;
     }
 
+
     var postData = {
         uEmail:siEmail,
-        uPassword:siPwd
+        uPassword:$.base64.encode(siPwd)
     };
     //postData.uEmail = "evercx@evercx.me";
     //postData.uPassword = "306534137";
