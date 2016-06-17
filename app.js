@@ -66,7 +66,7 @@ restify.serve(router,absenteeismModel);
 //路由
 app.use('/', routes);
 app.use('/dateOfCFI',agent);
-api(app);
+//api(app);
 app.use('/users', users);
 app.use(router);
 
