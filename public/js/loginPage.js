@@ -173,3 +173,28 @@ $("#btnSignIn").click(function(){
         }
     });
 });
+
+
+
+// $("#testbtn").click(function(){
+//     $.ajax({
+//         type:'POST',
+//         url:'http://115.28.26.5/middleware',
+//         contentType: "text/plain",
+//         //data:'type=ass&content=helloworld&command=message',
+//         success:function(data){
+//             console.log(data);
+//             alert(data.error);
+//         }
+//     });
+// })
+
+
+
+
+
+
+
+
+
+

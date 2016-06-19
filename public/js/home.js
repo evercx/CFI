@@ -99,7 +99,7 @@ $("#submit").click(function(){
 
 	$.ajax({
 		type:'POST',
-		url:'http://localhost:32929/dateOfCFI',
+		url:'/dateOfCFI',
 		contentType: "application/json",
 		data:JSON.stringify(postData),
 		// success:function(data){
