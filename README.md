@@ -12,7 +12,7 @@
 
 后端框架：Node.js — Express 
 
-数据库模块：Mongoose
+数据库模块：mongoose
 
 HTTP请求：superagent
 
