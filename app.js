@@ -14,17 +14,17 @@ var cookieParser = require('cookie-parser');//引用cookie
 var fs = require('fs');
 
 var routes = require('./routes/routes');
-var users = require('./routes/users');
-var api = require('./routes/api');
-var agent = require('./routes/testagent');
+var agent = require('./routes/agent');
 var config = require('./config');
 var userInfoModel = require('./models/userInfo');
 var absenteeismModel = require('./models/absenteeism');
 var ak = require('./controllers/accesskey');
-
+var supertest = require('supertest');
+var should = require('should');
 
 var app = express();
 var router = express.Router();
+var request = supertest(app);
 
 var accessKey = '';
 
@@ -66,8 +66,6 @@ restify.serve(router,absenteeismModel);
 //路由
 app.use('/', routes);
 app.use('/dateOfCFI',agent);
-//api(app);
-app.use('/users', users);
 app.use(router);
 
 // ak(accessKey);
@@ -75,12 +73,6 @@ app.use(router);
 // console.log("key:"+key);
 
 app.post('/login',function(req,res){
-   
-  // console.log("身份正确");
-  // req.session.uEmail = user.uEmail;
-  // //res.setHeader('Set-Cookie', "ever=cx");
-  // console.log("session: "+req.session.uEmail);
-  // res.redirect('/');
   userInfoModel.findOne({"uEmail":req.body.uEmail},function(err,user){
     console.log(req.body);
     if(user){

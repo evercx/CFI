@@ -1,4 +1,5 @@
 $(function() {
+	
     $.ajax({
         type:'GET',
         url:'/getSession',
