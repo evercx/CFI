@@ -20,7 +20,7 @@ HTTP请求：superagent
 
 前端逻辑：jQuery + Ajax
 
-## 样例
+## 演示
 
 ![signup](./imgs/1.jpg)![signin](./imgs/2.png)
 
